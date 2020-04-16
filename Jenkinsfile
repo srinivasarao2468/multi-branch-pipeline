@@ -6,7 +6,7 @@ pipeline {
         branch 'release*'
       }
       steps {
-        sh 'echo Building ${BRANCH_NAME}...'
+        sh 'echo Building on ${BRANCH_NAME}...'
       }
     }
     stage('master build') {
@@ -14,15 +14,15 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh 'echo Building ${BRANCH_NAME}...'
+        sh 'echo Building on ${BRANCH_NAME}...'
       }
     }
     stage('feature build') {
       when {
-        branch 'master'
+        branch 'feature*'
       }
       steps {
-        sh 'echo Building ${BRANCH_NAME}...'
+        sh 'echo Building on ${BRANCH_NAME}...'
       }
     }
   }
