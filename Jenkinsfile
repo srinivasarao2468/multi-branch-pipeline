@@ -1,12 +1,28 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('release build') {
       when {
         branch 'release*'
       }
       steps {
-        sh 'echo Building ${BRANCH_NAME}...'
+        sh 'echo Building on ${BRANCH_NAME}...'
+      }
+    }
+    stage('master build') {
+      when {
+        branch 'master'
+      }
+      steps {
+        sh 'echo Building on ${BRANCH_NAME}...'
+      }
+    }
+    stage('feature build') {
+      when {
+        branch 'feature*'
+      }
+      steps {
+        sh 'echo Building on ${BRANCH_NAME}...'
       }
     }
   }
