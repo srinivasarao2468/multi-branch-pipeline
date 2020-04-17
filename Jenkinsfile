@@ -17,13 +17,5 @@ pipeline {
         sh 'echo Building on ${BRANCH_NAME}...'
       }
     }
-    stage('feature build') {
-      when {
-        branch 'feature*'
-      }
-      steps {
-        sh 'echo Building on ${BRANCH_NAME}...'
-      }
-    }
   }
 }
