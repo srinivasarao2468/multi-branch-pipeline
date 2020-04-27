@@ -7,7 +7,9 @@ pipeline {
       }
       steps {
         sh 'echo Building ${BRANCH_NAME}...'
+        sh 'echo hello world'
       }
     }
+
   }
 }
